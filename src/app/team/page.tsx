@@ -1,7 +1,18 @@
 import Airtable from 'airtable';
 import Image from 'next/image';
+import Link from 'next/link';
 
-async function getTeamMembers() {
+interface TeamMember {
+  id: string;
+  name: string;
+  title: string;
+  bio: string;
+  email: string;
+  linkedin: string;
+  photo: string;
+}
+
+async function getTeamMembers(): Promise<TeamMember[]> {
   const base = new Airtable({ apiKey: process.env.AIRTABLE_TOKEN }).base(process.env.AIRTABLE_BASE_ID || '');
   
   const records = await base(process.env.AIRTABLE_TABLE_ID || '')
@@ -15,7 +26,7 @@ async function getTeamMembers() {
     bio: record.fields.Bio as string,
     email: record.fields.Email as string,
     linkedin: record.fields.LinkedIn as string,
-    photo: (record.fields.Photo as any)?.[0]?.url as string,
+    photo: (record.fields.Photo as unknown as Array<{ url: string }>)?.[0]?.url || '',
   }));
 }
 
@@ -26,12 +37,12 @@ export default async function TeamPage() {
     <div style={{ fontFamily: 'Candara, sans-serif' }} className="min-h-screen bg-white">
       <nav className="fixed w-full bg-white shadow-sm z-50">
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-          <a href="/">
-            <Image src="/logo-full.png" alt="Linea Capital" className="h-12" />
-          </a>
+          <Link href="/">
+            <Image src="/logo-full.png" alt="Linea Capital" width={200} height={48} className="h-12" />
+          </Link>
           <div className="hidden md:flex space-x-8">
-            <a href="/" className="text-gray-700 hover:text-[#4a7c71] transition">Home</a>
-            <a href="/team" className="text-[#4a7c71] font-semibold">Team</a>
+            <Link href="/" className="text-gray-700 hover:text-[#4a7c71] transition">Home</Link>
+            <Link href="/team" className="text-[#4a7c71] font-semibold">Team</Link>
           </div>
         </div>
       </nav>
