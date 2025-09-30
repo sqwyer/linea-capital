@@ -1,102 +1,195 @@
-import Image from "next/image";
+import React from 'react';
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <div style={{ fontFamily: 'Candara, sans-serif' }} className="min-h-screen bg-white">
+      {/* Navigation */}
+      <nav className="fixed w-full bg-white shadow-sm z-50">
+        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+          <div className="flex items-center space-x-3">
+            <img src="/logo-full.png" alt="Linea Capital" className="h-12" />
+          </div>
+          <div className="hidden md:flex space-x-8">
+            <a href="#home" className="text-gray-700 hover:text-[#4a7c71] transition">Home</a>
+            <a href="#services" className="text-gray-700 hover:text-[#4a7c71] transition">Services</a>
+            <a href="#criteria" className="text-gray-700 hover:text-[#4a7c71] transition">Investment Criteria</a>
+            <a href="#case-studies" className="text-gray-700 hover:text-[#4a7c71] transition">Case Studies</a>
+            <a href="#team" className="text-gray-700 hover:text-[#4a7c71] transition">Team</a>
+            <a href="#contact" className="text-gray-700 hover:text-[#4a7c71] transition">Contact</a>
+          </div>
+          <button 
+            className="px-6 py-2 rounded text-white transition"
+            style={{ backgroundColor: '#1a1f4d' }}
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+            Client Portal
+          </button>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+      </nav>
+
+      {/* Hero Section */}
+      <section className="pt-32 pb-20 px-6" style={{ backgroundColor: '#f8f9fa' }}>
+        <div className="max-w-7xl mx-auto">
+          <div className="max-w-3xl">
+            <h1 className="text-5xl md:text-6xl font-light mb-6" style={{ color: '#1a1f4d' }}>
+              Strategic Capital<br />Solutions for<br />Middle-Market Firms
+            </h1>
+            <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+              Linea Capital is a private capital advisor providing tailored financial solutions 
+              and investment sponsorship for growing businesses.
+            </p>
+            <div className="flex space-x-4">
+              <button 
+                className="px-8 py-3 rounded text-white text-lg transition hover:opacity-90"
+                style={{ backgroundColor: '#4a7c71' }}
+              >
+                Learn More
+              </button>
+              <button 
+                className="px-8 py-3 rounded text-lg transition border-2"
+                style={{ borderColor: '#1a1f4d', color: '#1a1f4d' }}
+              >
+                Contact Us
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section id="services" className="py-20 px-6">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-4xl font-light mb-4 text-center" style={{ color: '#1a1f4d' }}>
+            Our Services
+          </h2>
+          <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+            Two complementary business lines designed to support your growth
+          </p>
+          
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* Middle-Market Capital Advisory */}
+            <div className="p-8 rounded-lg border border-gray-200 hover:shadow-lg transition">
+              <div className="w-16 h-16 rounded-full mb-6 flex items-center justify-center" 
+                   style={{ backgroundColor: '#e8f4f0' }}>
+                <span className="text-2xl" style={{ color: '#4a7c71' }}>●</span>
+              </div>
+              <h3 className="text-2xl font-semibold mb-4" style={{ color: '#1a1f4d' }}>
+                Middle-Market Capital Advisory
+              </h3>
+              <p className="text-gray-600 leading-relaxed mb-6">
+                Expert guidance for companies seeking capital solutions. We provide strategic 
+                advice on debt and equity financing, mergers and acquisitions, and capital structure 
+                optimization.
+              </p>
+              <button 
+                className="text-sm font-semibold flex items-center group"
+                style={{ color: '#4a7c71' }}
+              >
+                Explore Advisory Services
+                <span className="ml-2 group-hover:ml-3 transition-all">→</span>
+              </button>
+            </div>
+
+            {/* Private Capital Investment Sponsorship */}
+            <div className="p-8 rounded-lg border border-gray-200 hover:shadow-lg transition">
+              <div className="w-16 h-16 rounded-full mb-6 flex items-center justify-center" 
+                   style={{ backgroundColor: '#e8eef4' }}>
+                <span className="text-2xl" style={{ color: '#1a1f4d' }}>●</span>
+              </div>
+              <h3 className="text-2xl font-semibold mb-4" style={{ color: '#1a1f4d' }}>
+                Private Capital Investment Sponsorship
+              </h3>
+              <p className="text-gray-600 leading-relaxed mb-6">
+                Direct investment partnership for exceptional opportunities. We sponsor and 
+                co-invest in businesses that align with our investment criteria and strategic vision.
+              </p>
+              <button 
+                className="text-sm font-semibold flex items-center group"
+                style={{ color: '#4a7c71' }}
+              >
+                View Investment Criteria
+                <span className="ml-2 group-hover:ml-3 transition-all">→</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Value Proposition */}
+      <section className="py-20 px-6" style={{ backgroundColor: '#1a1f4d' }}>
+        <div className="max-w-7xl mx-auto text-center">
+          <h2 className="text-4xl font-light mb-8 text-white">
+            Why Linea Capital
+          </h2>
+          <div className="grid md:grid-cols-3 gap-12 text-white">
+            <div>
+              <div className="text-5xl mb-4" style={{ color: '#4a7c71' }}>15+</div>
+              <h3 className="text-xl mb-2">Years Experience</h3>
+              <p className="text-gray-300">Deep expertise in middle-market transactions</p>
+            </div>
+            <div>
+              <div className="text-5xl mb-4" style={{ color: '#4a7c71' }}>$500M+</div>
+              <h3 className="text-xl mb-2">Capital Deployed</h3>
+              <p className="text-gray-300">Across diverse industries and structures</p>
+            </div>
+            <div>
+              <div className="text-5xl mb-4" style={{ color: '#4a7c71' }}>100%</div>
+              <h3 className="text-xl mb-2">Client Focused</h3>
+              <p className="text-gray-300">Tailored solutions for your unique needs</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 px-6">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-4xl font-light mb-6" style={{ color: '#1a1f4d' }}>
+            Ready to Explore Your Options?
+          </h2>
+          <p className="text-xl text-gray-600 mb-8">
+            Let's discuss how Linea Capital can support your growth objectives
+          </p>
+          <button 
+            className="px-10 py-4 rounded text-white text-lg transition hover:opacity-90"
+            style={{ backgroundColor: '#4a7c71' }}
+          >
+            Schedule a Consultation
+          </button>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="py-12 px-6 border-t">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-4 gap-8 mb-8">
+            <div>
+              <img src="/logo-icon.png" alt="Linea Capital" className="h-16 mb-4" />
+              <p className="text-sm text-gray-600">Strategic capital solutions for middle-market firms</p>
+            </div>
+            <div>
+              <h4 className="font-semibold mb-4" style={{ color: '#1a1f4d' }}>Services</h4>
+              <ul className="space-y-2 text-sm text-gray-600">
+                <li><a href="#" className="hover:text-[#4a7c71]">Capital Advisory</a></li>
+                <li><a href="#" className="hover:text-[#4a7c71]">Investment Sponsorship</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold mb-4" style={{ color: '#1a1f4d' }}>Company</h4>
+              <ul className="space-y-2 text-sm text-gray-600">
+                <li><a href="#" className="hover:text-[#4a7c71]">About</a></li>
+                <li><a href="#" className="hover:text-[#4a7c71]">Team</a></li>
+                <li><a href="#" className="hover:text-[#4a7c71]">Case Studies</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold mb-4" style={{ color: '#1a1f4d' }}>Contact</h4>
+              <p className="text-sm text-gray-600">info@lineacapital.com</p>
+            </div>
+          </div>
+          <div className="pt-8 border-t text-center text-sm text-gray-600">
+            © 2025 Linea Capital, LLC. All rights reserved.
+          </div>
+        </div>
       </footer>
     </div>
   );
