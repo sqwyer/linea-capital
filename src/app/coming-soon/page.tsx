@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-export default function Home() {
+export default function ComingSoon() {
   return (
     <div style={{ fontFamily: 'Candara, sans-serif' }} className="min-h-screen bg-white flex items-center justify-center px-6">
       <div className="max-w-2xl text-center">
