@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 
 export default function Home() {
   return (
@@ -7,7 +8,7 @@ export default function Home() {
       <nav className="fixed w-full bg-white shadow-sm z-50">
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
           <div className="flex items-center space-x-3">
-            <img src="/logo-full.png" alt="Linea Capital" className="h-12" />
+            <Image src="/logo-full.png" alt="Linea Capital" width={200} height={48} className="h-12" />
           </div>
           <div className="hidden md:flex space-x-8">
             <a href="#home" className="text-gray-700 hover:text-[#4a7c71] transition">Home</a>
@@ -147,7 +148,7 @@ export default function Home() {
             Ready to Explore Your Options?
           </h2>
           <p className="text-xl text-gray-600 mb-8">
-            Let's discuss how Linea Capital can support your growth objectives
+            Let&apos;s discuss how Linea Capital can support your growth objectives
           </p>
           <button 
             className="px-10 py-4 rounded text-white text-lg transition hover:opacity-90"
@@ -163,7 +164,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             <div>
-              <img src="/logo-icon.png" alt="Linea Capital" className="h-16 mb-4" />
+              <Image src="/logo-icon.png" alt="Linea Capital" width={64} height={64} className="h-16 mb-4" />
               <p className="text-sm text-gray-600">Strategic capital solutions for middle-market firms</p>
             </div>
             <div>
